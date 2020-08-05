@@ -1,0 +1,14 @@
+version: '3'
+networks:
+  backend:
+    driver: bridge
+
+services:
+  ruby:
+    image: ruby:2.7.1-alpine
+    container_name: ruby-container
+    tty: true
+    volumes:
+      - ./app:/usr/src/app
+    networks:
+      - backend
