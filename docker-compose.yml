@@ -5,10 +5,12 @@ networks:
 
 services:
   ruby:
-    image: ruby:2.7.1-alpine
+    build: ./dock/ruby
     container_name: ruby-container
     tty: true
     volumes:
       - ./app:/usr/src/app
+    ports:
+      - 3000:3000
     networks:
       - backend
